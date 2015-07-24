@@ -1,5 +1,5 @@
 bar
 
 def foo
-  puts "hello"
+  fail "ERROR: With wrap=true, foo should't be defined at top level"
 end

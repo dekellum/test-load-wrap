@@ -5,5 +5,11 @@ end
 load( File.expand_path( "../loadee.rb", __FILE__ ), true )
 
 if defined?( foo )
-  fail "ERROR: Given load() with wrap=true, loadee's foo shouldn't be defined"
+  foo
+else
+  begin
+    foo
+  rescue NameError
+    puts "The load(...,true) wrap option works"
+  end
 end
