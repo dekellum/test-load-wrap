@@ -1,6 +1,11 @@
-def bar
-  puts "Top level loader method called from loadee"
+module Extender
+  private
+  def bar
+    puts "Top level loader method called from loadee"
+  end
 end
+
+self.extend Extender
 
 load( File.expand_path( "../loadee.rb", __FILE__ ), true )
 
